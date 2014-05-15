@@ -15,3 +15,8 @@ License
 ----
 
 MIT
+
+Author
+----
+
+@tsif
