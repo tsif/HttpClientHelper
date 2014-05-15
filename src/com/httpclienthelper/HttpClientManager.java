@@ -59,6 +59,15 @@ abstract public class HttpClientManager extends AsyncTask<RequestAttributes, Voi
         }
     }
 	
+	public void unsubscribe(boolean continueRunning) {
+		
+		_running = continueRunning;
+		
+		if(_observer != null) {
+        	ObservingService.getInstance().removeObserver(_observer);
+        }
+	}
+	
 	public boolean isRunning() {
 	    return _running;	
 	}
