@@ -9,7 +9,7 @@ import org.apache.http.HttpEntity;
 
 public class Utilities {
 
-	public static synchronized String extractString(HttpEntity  entity) {
+	public static synchronized String extractStringFromEntity(HttpEntity  entity) {
 
 		InputStream is = null;
 
