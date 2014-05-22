@@ -3,20 +3,20 @@ HttpClientHelper
 
 A java library for asynchronously making http requests and notifying observers of the response and its contents 
 
-Sample usage
-----
+## Sample usage
 
-Version
-----
+## Version
 
-0.1
+0.2
 
-License
-----
+## Authors
 
-MIT
+* [@tsif][tsif]
 
-Author
-----
+## Release History
 
-@tsif
+## License
+
+Licensed under the [MIT License](LICENSE-MIT)
+
+[tsif]: https://github.com/tsif
