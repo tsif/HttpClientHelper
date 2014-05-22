@@ -18,6 +18,11 @@ public class ExampleManager extends HttpClientManager {
 	public static final String REPOS_FAIL    = "reposFail";
 	public static final String REPOS_BAD     = "reposBad";
 	
+	public static final String IMAGE_TAG     = "imageTag";
+	public static final String IMAGE_SUCCESS = "imageSuccess";
+	public static final String IMAGE_FAIL    = "imageFail";
+	public static final String IMAGE_BAD     = "imageBad";
+	
 	/*
 	 * Make a request to the Github public API
 	 */
@@ -49,6 +54,16 @@ public class ExampleManager extends HttpClientManager {
 		 */
 		attributes.addValue("format", "json");
 			
+		execute(attributes); 
+	}
+	
+	public void uploadImage(String path) {
+		
+		String            url        = "https://api.imgur.com/3/upload";
+		RequestAttributes attributes = new RequestAttributes(url, IMAGE_TAG);
+		attributes.setMethod(HttpClientBuilder.HTTP_POST_METHOD);
+		attributes.setFilePath(path);
+		
 		execute(attributes); 
 	}
 	
@@ -89,6 +104,8 @@ public class ExampleManager extends HttpClientManager {
 		
 		if(tag.equals(REPOS_TAG)) {
 			return REPOS_SUCCESS;
+		} else if(tag.equals(IMAGE_TAG)) {
+			return IMAGE_SUCCESS;
 		}
 		return EMPTY_STRING;
 	}
@@ -97,7 +114,9 @@ public class ExampleManager extends HttpClientManager {
 		 
         if(tag.equals(REPOS_TAG)) {
         	return REPOS_FAIL;
-		}
+		} else if(tag.equals(IMAGE_TAG)) {
+			return IMAGE_FAIL;
+		} 
 		return EMPTY_STRING;
 	}
 
@@ -105,7 +124,9 @@ public class ExampleManager extends HttpClientManager {
 		
         if(tag.equals(REPOS_TAG)) {
         	return REPOS_BAD;
-		}
+		} else if(tag.equals(IMAGE_TAG)) {
+			return IMAGE_BAD;
+		} 
 		return EMPTY_STRING;
 	}
 }
