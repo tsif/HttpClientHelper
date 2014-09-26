@@ -28,8 +28,8 @@ In you client code, an Activity for instance, implement Observer and override th
 - Edit it on a feature branch
 - Commit it
 - Push it to your origin
-- reate a pull request
-- 
+- Create a pull request
+
 ## Authors
 
 * [@tsif][tsif]
